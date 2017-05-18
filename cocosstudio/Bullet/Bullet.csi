@@ -1,0 +1,13 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="Bullet" Type="Plist" ID="f820f658-c730-4700-9844-a6aef999dcd7" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="Bullet/MyBullet_2.png" />
+      <FilePathData Path="Bullet/drop.png" />
+      <FilePathData Path="Bullet/MyBullet_4.png" />
+      <FilePathData Path="Bullet/MyBullet_1.png" />
+      <FilePathData Path="Bullet/MyBullet_3.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

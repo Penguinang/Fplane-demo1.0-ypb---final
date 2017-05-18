@@ -1,0 +1,63 @@
+<Solution>
+  <PropertyGroup Name="FPLANE~1" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="Bullet">
+          <PlistInfo Name="Bullet.csi" Type="Plist" />
+          <Image Name="drop.png" />
+          <Image Name="MyBullet_1.png" />
+          <Image Name="MyBullet_2.png" />
+          <Image Name="MyBullet_3.png" />
+          <Image Name="MyBullet_4.png" />
+          <Project Name="thunder.csd" Type="Node" />
+          <Image Name="thunder_01.png" />
+          <Image Name="thunder_02.png" />
+          <Image Name="thunder_03.png" />
+          <Image Name="thunder_04.png" />
+        </Folder>
+        <Folder Name="Enemy">
+          <Image Name="boss.png" />
+          <PlistInfo Name="enemy.csi" Type="Plist" />
+          <Image Name="enemy2.png" />
+          <Image Name="enemy3.png" />
+          <Image Name="enemy4.png" />
+          <Image Name="feiji.png" />
+          <Image Name="junior.png" />
+        </Folder>
+        <Folder Name="FPlane">
+          <PlistInfo Name="fplane.csi" Type="Plist" />
+          <Image Name="fplane_protected.png" />
+          <Image Name="thunder.png" />
+        </Folder>
+        <Folder Name="GameOver">
+          <Project Name="GameOverScene.csd" Type="Scene" />
+          <Image Name="gameoverscene.jpg" />
+        </Folder>
+        <Folder Name="HomeScene">
+          <Image Name="HomeScene.jpg" />
+        </Folder>
+        <Folder Name="icon">
+          <Image Name="drop.png" />
+          <Image Name="drop_selected.png" />
+          <Image Name="menu.png" />
+          <Image Name="thunder.png" />
+          <Image Name="thunder_selected.png" />
+        </Folder>
+        <Folder Name="RunGameScene">
+          <Folder Name="Pause">
+            <Image Name="menubutton.png" />
+            <Project Name="Pause.csd" Type="Node" />
+          </Folder>
+          <Image Name="blood.png" />
+          <Image Name="skill.png" />
+        </Folder>
+        <Project Name="ExitScene.csd" Type="Scene" />
+        <Project Name="HomeScene.csd" Type="Scene" />
+        <Project Name="RunGameScene.csd" Type="Scene" />
+        <Image Name="selectmap.jpg" />
+        <Project Name="SelectMapScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

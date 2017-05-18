@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ParticleProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>D:\ccpp\cocos\粒子\exp</ProjectDir>
+  <Version>1.4.0.1</Version>
+  <Resources>D:\ccpp\cocos\粒子\exp\Resources</Resources>
+  <Name>exp</Name>
+  <JsonFileName>exp.json</JsonFileName>
+  <JsonFolder>D:\ccpp\cocos\粒子\exp\Plist</JsonFolder>
+  <JsonList>
+    <string>exp_2.plist</string>
+  </JsonList>
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <filePath>D:\ccpp\cocos\粒子\exp\exp.xml.particle</filePath>
+  <ProjectType>ParticleProject</ProjectType>
+  <ResRelativePath />
+  <imageFileList />
+  <PlistSuffix>.plist</PlistSuffix>
+  <CurrentParticlePlist>exp_2.plist</CurrentParticlePlist>
+</ParticleProject>

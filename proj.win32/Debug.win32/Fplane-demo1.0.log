@@ -1,0 +1,16 @@
+﻿  RunGameScene.cpp
+  SelectMapScene.cpp
+d:\ccpp\cocos\jjjjj\fplane-demo1.0 ypb - final\proj.win32\rungamescene.cpp(245): warning C4996: 'cocos2d::Director::sharedDirector': 被声明为已否决
+  d:\cocosstudio\cocos2d-x\cocos2d-x-3.10\cocos\base\ccdirector.h(138): note: 参见“cocos2d::Director::sharedDirector”的声明
+d:\ccpp\cocos\jjjjj\fplane-demo1.0 ypb - final\proj.win32\rungamescene.cpp(69): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+  d:\cocosstudio\cocos2d-x\cocos2d-x-3.10\cocos\2d\ccnode.h(159): note: 参见“cocos2d::Node::setZOrder”的声明
+d:\ccpp\cocos\jjjjj\fplane-demo1.0 ypb - final\proj.win32\rungamescene.cpp(83): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+  d:\cocosstudio\cocos2d-x\cocos2d-x-3.10\cocos\2d\ccnode.h(159): note: 参见“cocos2d::Node::setZOrder”的声明
+d:\ccpp\cocos\jjjjj\fplane-demo1.0 ypb - final\proj.win32\rungamescene.cpp(600): warning C4996: 'cocos2d::Scheduler::scheduleSelector': 被声明为已否决
+  d:\cocosstudio\cocos2d-x\cocos2d-x-3.10\cocos\base\ccscheduler.h(447): note: 参见“cocos2d::Scheduler::scheduleSelector”的声明
+d:\ccpp\cocos\jjjjj\fplane-demo1.0 ypb - final\proj.win32\rungamescene.cpp(788): warning C4996: 'cocos2d::Node::setZOrder': 被声明为已否决
+  d:\cocosstudio\cocos2d-x\cocos2d-x-3.10\cocos\2d\ccnode.h(159): note: 参见“cocos2d::Node::setZOrder”的声明
+  复制了 60 个文件
+  Fplane-demo1.0.vcxproj -> D:\ccpp\cocos\jjjjj\Fplane-demo1.0 ypb - final\proj.win32\Debug.win32\Fplane-demo1.0.exe
+  Fplane-demo1.0.vcxproj -> D:\ccpp\cocos\jjjjj\Fplane-demo1.0 ypb - final\proj.win32\Debug.win32\Fplane-demo1.0.pdb (Full PDB)
+  复制了 0 个文件

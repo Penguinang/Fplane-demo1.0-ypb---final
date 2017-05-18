@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>Bullet/MyBullet_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{137,24},{42,25}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{42,25}</string>
+			</dict>
+			<key>Bullet/drop.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{77,0},{60,36}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{60,36}</string>
+			</dict>
+			<key>Bullet/MyBullet_4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{77,48}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{77,48}</string>
+			</dict>
+			<key>Bullet/MyBullet_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{223,0},{50,26}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{50,26}</string>
+			</dict>
+			<key>Bullet/MyBullet_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{137,0},{86,24}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{86,24}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>Bullet.png</string>
+			<key>realTextureFileName</key>
+			<string>Bullet.png</string>
+			<key>size</key>
+			<string>{512,64}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>512</integer>
+			<key>height</key>
+			<integer>64</integer>
+		</dict>
+	</dict>
+</plist>
