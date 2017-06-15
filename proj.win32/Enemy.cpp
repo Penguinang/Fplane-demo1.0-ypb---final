@@ -6,6 +6,7 @@
 #include"MyBullet.h"
 #include"MyBodyParser.h"
 #include"FPlane.h"
+#include"RunGameScene.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -91,20 +92,23 @@ void Boss::update(float dt)
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	//////boss AI
 	/////////////第一步，自动飞到FPlane的位置
+
+	auto dx = 10;
+
 	auto position = fplane->getPosition();
 	if (position.x > bossposition.x + 200)
-		 setPosition(environment->convertToNodeSpace(bossposition + Point(5, 0)));
+		 setPosition(environment->convertToNodeSpace(bossposition + Point(dx, 0)));
 	else
 		if (position.x > bossposition.x - 200);
 		else
-			 setPosition(environment->convertToNodeSpace(bossposition + Point(-5, 0)));
+			 setPosition(environment->convertToNodeSpace(bossposition + Point(-dx, 0)));
 
 	bossposition = environment->convertToWorldSpace( getPosition());
 	if (position.y > bossposition.y + 200)
-		 setPosition(environment->convertToNodeSpace(bossposition + Point(0, 5)));
+		 setPosition(environment->convertToNodeSpace(bossposition + Point(0, dx)));
 	else if (position.y > bossposition.y - 200);
 	else
-		 setPosition(environment->convertToNodeSpace(bossposition + Point(0, -5)));
+		 setPosition(environment->convertToNodeSpace(bossposition + Point(0, -dx)));
 
 
 	///////////第二步，用屁股对准FPlane 后射击
@@ -356,9 +360,54 @@ void JuniorEnemy::update(float dt)
 
 	if (blood <= 0)
 	{
-		auto &enemyregister = EnemyRegister::getInstance()->enemyregister;
+		auto rootNode = environment->getParent();
+		auto rungamescene = (RunGameScene*)rootNode->getParent();
+		auto mission = rungamescene->mission;
+		auto endmission = rungamescene->endmission;
+		//auto nextroom = rungamescene->nextroom;
+		auto scorenumber = (LabelAtlas*)rootNode->getChildByName("scorenumber");
+
+		auto enemyregister = EnemyRegister::getInstance();
 		/*enemyregister.at(this)->removeFromParent();*/
-		enemyregister.eraseObject(this);
+		enemyregister->enemyregister.eraseObject(this);
+
+		if (enemyregister->enemyregister.size() == 0)
+		{
+
+			if (mission != endmission)
+			{
+				rungamescene->nextroom();
+				log("next missinon");
+			}
+			else if (environment->getChildByName("boss") == 0)
+			{
+				this->pause();
+				auto scale = ScaleBy::create(2, 3);
+				auto move = MoveTo::create(1, Point(600, 300));
+				auto endanimation = Spawn::create(scale, move, 0);
+				//////////////////////////////////////////////// BUG /////////////////////////////////////////////////////////
+				//////游戏结束时，退出场景，销毁敌人注册者的功能，无法放在动作的回调函数中
+				//////解决方法：放在了一个定时调用的函数中，在动作执行完后执行
+				/*auto call = [=](Ref* s)
+				{
+
+				FPlane::getInstance()->removeFromParent();
+				FPlane::getInstance()->release();
+
+				EnemyRegister::getInstance()->removeFromParent();
+				EnemyRegister::getInstance()->autorelease();
+				delete(EnemyRegister::getInstance());
+
+				Director::getInstance()->popScene();
+				};
+
+				auto endfunc = CallFuncN::create(call);*/
+				auto endaction = Sequence::create(endanimation, 0);
+				scorenumber->runAction(endaction);
+
+				CCDirector::sharedDirector()->getScheduler()->scheduleSelector(schedule_selector(RunGameScene::gameend), this, 2, 0, 3, false);
+			}
+		}
 
 		this->removeFromParent();
 

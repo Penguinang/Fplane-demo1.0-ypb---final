@@ -562,44 +562,6 @@ void RunGameScene::update(float delta)
 	sprintf(scorestring, "%d", fplane->score);
 	scorenumber->setString(scorestring);
 
-	auto enemyregister = EnemyRegister::getInstance();
-	if (enemyregister->enemyregister.size() == 0)
-	{
-
-		if (mission != endmission)
-		{
-			nextroom();
-			log("next missinon");
-		}
-		else if (environment->getChildByName("boss") == 0)
-		{
-			this->pause();
-			auto scale = ScaleBy::create(2, 3);
-			auto move = MoveTo::create(1, Point(600, 300));
-			auto endanimation = Spawn::create(scale, move, 0);
-			//////////////////////////////////////////////// BUG /////////////////////////////////////////////////////////
-			//////游戏结束时，退出场景，销毁敌人注册者的功能，无法放在动作的回调函数中
-			//////解决方法：放在了一个定时调用的函数中，在动作执行完后执行
-			/*auto call = [=](Ref* s)
-			{
-
-			FPlane::getInstance()->removeFromParent();
-			FPlane::getInstance()->release();
-
-			EnemyRegister::getInstance()->removeFromParent();
-			EnemyRegister::getInstance()->autorelease();
-			delete(EnemyRegister::getInstance());
-
-			Director::getInstance()->popScene();
-			};
-
-			auto endfunc = CallFuncN::create(call);*/
-			auto endaction = Sequence::create(endanimation, 0);
-			scorenumber->runAction(endaction);
-
-			CCDirector::sharedDirector()->getScheduler()->scheduleSelector(schedule_selector(RunGameScene::gameend), this, 2, 0, 3, false);
-		}
-	}
 }
 
 void RunGameScene::move(int dir)
@@ -750,6 +712,7 @@ void RunGameScene::nextroom()
 	};
 	auto pausesprite = CallFuncN::create(pa);
 	auto resumesprite = CallFuncN::create(re);
+	
 	auto seq = Sequence::create(pausesprite, fadeout, fadein, resumesprite, 0);
 	/*this->pause();
 
@@ -775,6 +738,14 @@ void RunGameScene::nextroom()
 
 
 	//重新生成敌机
+	
+	this->scheduleOnce(schedule_selector(RunGameScene::exppp), 2.0f);
+
+}
+void RunGameScene::exppp(float timer)
+{
+	auto rootNode = getChildByName("rootNode"); 
+	auto environment = rootNode->getChildByName("environment");
 
 	auto &enemyregister = EnemyRegister::getInstance()->enemyregister;
 
@@ -787,18 +758,6 @@ void RunGameScene::nextroom()
 		boss->setName("boss");
 		boss->setZOrder(0);
 	}
-
-	/*auto number = missioninfo[mission];
-
-	for (auto i = 1;i<=number;i++)
-	{
-	auto enemy = JuniorEnemy::create(senior, seniorbullet);
-	environment->addChild(enemy);
-	auto a = random();
-	auto position = Point( bksize.width*(1.0*random()/RAND_MAX-0.5), bksize.height*(1.0*random() / RAND_MAX - 0.5));
-	enemy->setPosition(position);
-	enemyregister.pushBack(enemy);
-	};*/
 
 	auto background = environment->getChildByName("background");
 	auto bksize = background->getContentSize();

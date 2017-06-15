@@ -46,6 +46,9 @@ public:
 	int mapNumber = 3;
 
 	void gameend(float dt);
+	int mission;
+	int endmission;
+	void nextroom();
 
 private:
 	bool keystate[4];
@@ -56,16 +59,14 @@ private:
 	//cocos2d::Map < JuniorEnemy*, cocos2d::Sprite* > enemyregister;
 
 	void loadmissioninfo();
-	int mission;
-	int endmission;
 	//std::map<int, int> missioninfo;
 	string smallmappic;
 
 	time_t inittime;
 
 
-	void nextroom();
 	std::map<int, missioninfoma*> missionmap;
+	void exppp(float);
 
 	/////////////////////////////////////////////	µÿÕº–≈œ¢	///////////////////////////////////////////////////////
 	void map();
